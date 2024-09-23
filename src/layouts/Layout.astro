@@ -1,83 +1,76 @@
 ---
-import "@fontsource-variable/inter";
-import "@fontsource/montserrat-alternates";
-
 interface Props {
-	title: string;
+  title: string;
+  description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body data-js-enabled="false">
+    <slot />
+  </body>
 </html>
 <style is:global>
-	@view-transition {
-		navigation: auto;
-	}
+  @view-transition {
+    navigation: auto;
+  }
 
-	:root {
-		--primary: #274494;
-		--foreground-rgb: 0, 0, 0;
-		--background-start-rgb: 214, 219, 220;
-		--background-end-rgb: 255, 255, 255;
-	}
+  [data-js-enabled="false"] input:user-invalid {
+    @apply text-error input-error;
+  }
 
-	body {
-		color: rgb(var(--foreground-rgb));
-		background: linear-gradient(
-				to bottom,
-				transparent,
-				rgb(var(--background-start-rgb))
-			)
-			rgb(var(--background-end-rgb));
-	}
+  .grid-desing {
+    z-index: 0;
+    opacity: 0.4;
 
-	@keyframes fadeIn {
-		0% {
-			opacity: 0;
-		}
-		100% {
-			opacity: 1;
-		}
-	}
+    background-size: 30px 30px;
+    background-image: linear-gradient(
+        90deg,
+        var(--muted-grid) 1px,
+        transparent 0
+      ),
+      linear-gradient(180deg, var(--muted-grid) 1px, transparent 0);
+  }
 
-	@-webkit-keyframes fadeIn {
-		0% {
-			opacity: 0;
-		}
-		100% {
-			opacity: 1;
-		}
-	}
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 
-	.fade-in {
-		-webkit-animation-duration: 0.5s;
-		animation-duration: 0.5s;
-		-webkit-animation-fill-mode: both;
-		animation-fill-mode: both;
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 
-		-webkit-animation-name: fadeIn;
-		animation-name: fadeIn;
-	}
+  .fade-in {
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
 
-	.btn-primary {
-		@apply bg-blue-600 hover:bg-blue-800 text-white py-2 px-4 rounded transition-all;
-	}
-
-	.btn-secondary {
-		@apply bg-gray-200 hover:bg-gray-300 text-black py-2 px-4 rounded transition-all;
-	}
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+  }
 </style>
+<script>
+  document.body.dataset.jsEnabled = "true";
+</script>
