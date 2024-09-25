@@ -1,0 +1,9 @@
+---
+import AuthLayout from "@/layouts/AuthLayout.astro";
+
+import { SignInForm as SignInForm } from "@/features/auth/SignInForm";
+---
+
+<AuthLayout>
+  <SignInForm client:visible />
+</AuthLayout>

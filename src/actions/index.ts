@@ -1,5 +1,5 @@
-import { SingInFormAction } from '@/features/auth/SingInFormAction';
+import { SignInFormAction } from "@/features/auth/SignInFormAction";
 
 export const server = {
-    singIn: SingInFormAction,
-}
+  signIn: SignInFormAction,
+};

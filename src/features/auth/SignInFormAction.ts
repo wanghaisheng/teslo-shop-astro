@@ -5,7 +5,7 @@ import { z } from "astro:schema";
 import { Argon2id } from "oslo/password";
 import { lucia } from "@/auth";
 
-export const SingInFormAction = defineAction({
+export const SignInFormAction = defineAction({
   accept: "form",
   input: z.object({
     email: z.string().email({

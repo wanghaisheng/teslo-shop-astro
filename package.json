@@ -15,7 +15,7 @@
     "@astrojs/db": "^0.14.1",
     "@astrojs/solid-js": "^4.4.2",
     "@astrojs/tailwind": "^5.1.1",
-    "astro": "^4.15.8",
+    "astro": "^4.15.9",
     "lucia": "^3.2.0",
     "lucia-adapter-astrodb": "^0.2.0",
     "solid-js": "^1.8.22",

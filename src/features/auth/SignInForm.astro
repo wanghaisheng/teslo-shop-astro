@@ -1,7 +1,7 @@
 ---
 import { actions, isInputError } from "astro:actions";
 
-const result = Astro.getActionResult(actions.singIn);
+const result = Astro.getActionResult(actions.signIn);
 const fieldError = isInputError(result?.error) ? result?.error.fields : {};
 
 export const prerender = false;

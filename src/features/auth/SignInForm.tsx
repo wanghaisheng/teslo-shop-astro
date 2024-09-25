@@ -6,13 +6,13 @@ import { Show, onMount } from "solid-js";
 import { createForm, type FormBase } from "@/shared/primitives/create-form";
 import { TextField } from "@/shared/components/ui/TextField";
 
-type SingInForm = {
+type SignInForm = {
   emailErrors: string[];
   passwordErrors: string[];
 } & FormBase;
 
 let singInFormElement!: HTMLFormElement;
-const { form, setForm } = createForm<SingInForm>({
+const { form, setForm } = createForm<SignInForm>({
   emailErrors: [],
   inputError: "",
   isSubmitting: false,
@@ -20,7 +20,7 @@ const { form, setForm } = createForm<SingInForm>({
   passwordErrors: [],
 });
 
-export function SingInForm() {
+export function SignInForm() {
   onMount(() => {
     singInFormElement.setAttribute("novalidate", "");
   });
@@ -37,10 +37,7 @@ export function SingInForm() {
       });
 
       const formData = new FormData(form);
-      const { error } = await actions.singIn(formData);
-
-      console.log(error);
-      console.log(isInputError(error));
+      const { error } = await actions.signIn(formData);
 
       if (error && isInputError(error))
         setForm({
@@ -58,7 +55,7 @@ export function SingInForm() {
 
   return (
     <form
-      action={actions.singIn}
+      action={actions.signIn}
       class="mx-auto grid w-[350px] gap-6"
       method="post"
       ref={singInFormElement}
