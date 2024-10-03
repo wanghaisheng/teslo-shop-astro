@@ -1,0 +1,63 @@
+<form
+  action={actions.signIn}
+  class="mx-auto grid w-[350px] gap-6"
+  method="post"
+  ref={singInFormElement}
+  onSubmit={(event) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    handleSubmit(event);
+  }}
+>
+  <fieldset class="grid gap-2 text-center">
+    <h1 class="text-3xl font-bold">Sign In</h1>
+    <p class="text-balance text-muted-foreground">
+      Enter your email below to sign in to your account
+    </p>
+  </fieldset>
+  <div class="grid gap-4">
+    <fieldset class="grid gap-2">
+      <TextField
+        autocomplete="off"
+        error={form.inputError || form.emailErrors.join(" ")}
+        id="email"
+        isValid={form.isValid}
+        label="Email"
+        name="email"
+        pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+        placeholder="m@example.com"
+        required
+        type="email"
+        validations={[
+          {
+            error: "The email address is badly formatted.",
+            validationType: "patternMismatch",
+          },
+        ]}
+      />
+    </fieldset>
+    <fieldset class="grid gap-2">
+      <TextField
+        error={form.inputError || form.passwordErrors.join(" ")}
+        id="password"
+        isValid={form.isValid}
+        label="Password"
+        maxlength={16}
+        minlength={8}
+        name="password"
+        placeholder="**********"
+        required
+        type="password"
+      />
+    </fieldset>
+    <Show when={form.isSubmitting} fallback={(<SubmitButton />)}>
+      <SubmittingButton />
+    </Show>
+    <div class="mt-4 text-center text-sm">
+      <a href="/forgot-password" class="ml-auto inline-block text-sm underline">
+        Forgot your password?
+      </a>
+    </div>
+  </div>
+</form>

@@ -1,4 +1,4 @@
-# Teslo shop with Astro and Preact!
+# Teslo shop with Astro and SolidJS!
 
 This is an ecommerce-admin project made with [Astro](https://astro.build/) 🚀 and ♥️.
 
@@ -9,7 +9,7 @@ This is an ecommerce-admin project made with [Astro](https://astro.build/) 🚀 
 3. [Clouflare] (https://workers.cloudflare.com/)
 4. [DaisyUI] (https://daisyui.com/)
 5. [LuciaAuth] (https://lucia-auth.com/)
-6. [Preact] (https://preactjs.com/)
+6. [SolidJS] (https://docs.solidjs.com/)
 7. [TailwindCSS] (https://tailwindcss.com/)
 
 ## Getting Started

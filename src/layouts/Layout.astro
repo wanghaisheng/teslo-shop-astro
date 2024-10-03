@@ -1,4 +1,6 @@
 ---
+import "@/globals.css";
+
 interface Props {
   title: string;
   description: string;
@@ -26,9 +28,9 @@ const { title, description } = Astro.props;
     navigation: auto;
   }
 
-  [data-js-enabled="false"] input:user-invalid {
+  /* [data-js-enabled="false"] input:user-invalid {
     @apply text-error input-error;
-  }
+  } */
 
   .grid-desing {
     z-index: 0;
@@ -71,6 +73,7 @@ const { title, description } = Astro.props;
     animation-name: fadeIn;
   }
 </style>
+<script is:inline src="./node_modules/preline/preline.js"></script>
 <script>
   document.body.dataset.jsEnabled = "true";
 </script>
