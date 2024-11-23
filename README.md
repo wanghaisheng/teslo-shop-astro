@@ -1,3 +1,5 @@
+2024-11-23
+
 # Teslo shop with Astro and SolidJS!
 
 This is an ecommerce-admin project made with [Astro](https://astro.build/) 🚀 and ♥️.
